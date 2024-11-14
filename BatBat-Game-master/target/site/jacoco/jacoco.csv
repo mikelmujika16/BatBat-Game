@@ -21,9 +21,9 @@ BatBat-Game,al.tonikolaba.entity,Title,128,23,10,0,30,8,11,2,6,2
 BatBat-Game,al.tonikolaba.entity,Enemy.EnemyType,0,33,0,0,0,2,0,1,0,1
 BatBat-Game,al.tonikolaba.entity,Player,1027,663,193,27,185,114,130,17,23,14
 BatBat-Game,al.tonikolaba.gamestate,MenuState,86,20,13,0,25,3,10,1,3,1
-BatBat-Game,al.tonikolaba.gamestate,OptionsState,102,23,14,0,30,4,12,1,4,1
+BatBat-Game,al.tonikolaba.gamestate,OptionsState,99,20,14,0,30,3,12,1,4,1
 BatBat-Game,al.tonikolaba.gamestate,GameStateManager,115,78,15,9,28,19,14,5,5,2
-BatBat-Game,al.tonikolaba.gamestate,BasicState,173,69,22,0,35,14,15,1,4,1
+BatBat-Game,al.tonikolaba.gamestate,BasicState,173,67,22,0,35,13,15,1,4,1
 BatBat-Game,al.tonikolaba.gamestate,Level1State,306,0,0,0,15,0,2,0,2,0
 BatBat-Game,al.tonikolaba.gamestate,Level4State,1292,0,112,0,241,0,69,0,13,0
 BatBat-Game,al.tonikolaba.gamestate,Level3State,95,361,18,0,23,13,11,2,2,2

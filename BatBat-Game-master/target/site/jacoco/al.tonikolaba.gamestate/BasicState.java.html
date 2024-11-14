@@ -36,7 +36,7 @@ public abstract class BasicState {
 	protected Font font2;
 	protected Font fontMenu;
 
-<span class="fc" id="L39">	protected BasicState(GameStateManager gsm) {</span>
+<span class="fc" id="L39">	public BasicState(GameStateManager gsm) {</span>
 <span class="fc" id="L40">		this.gsm = gsm;</span>
 		try {
 
@@ -47,67 +47,66 @@ public abstract class BasicState {
 <span class="fc" id="L47">			head = ImageIO.read(getClass().getResourceAsStream(&quot;/HUD/Hud.gif&quot;)).getSubimage(0, 12, 12, 11);</span>
 
 			// titles and fonts
-<span class="fc" id="L50">			String arial = &quot;Arial&quot;;</span>
-<span class="fc" id="L51">			fontMenu = new Font(arial, Font.BOLD, 18);</span>
-<span class="fc" id="L52">			font = new Font(arial, Font.BOLD, 15);</span>
-<span class="fc" id="L53">			font2 = new Font(arial, Font.PLAIN, 9);</span>
+<span class="fc" id="L50">			fontMenu = new Font(&quot;Arial&quot;, Font.BOLD, 18);</span>
+<span class="fc" id="L51">			font = new Font(&quot;Arial&quot;, Font.BOLD, 15);</span>
+<span class="fc" id="L52">			font2 = new Font(&quot;Arial&quot;, Font.PLAIN, 9);</span>
 
 			// load sound sfx
-<span class="fc" id="L56">			JukeBox.load(&quot;/SFX/menuoption.mp3&quot;, MENU_OPTION);</span>
-<span class="fc" id="L57">			JukeBox.load(&quot;/SFX/menuselect.mp3&quot;, &quot;menuselect&quot;);</span>
+<span class="fc" id="L55">			JukeBox.load(&quot;/SFX/menuoption.mp3&quot;, MENU_OPTION);</span>
+<span class="fc" id="L56">			JukeBox.load(&quot;/SFX/menuselect.mp3&quot;, &quot;menuselect&quot;);</span>
 
-<span class="nc" id="L59">		} catch (Exception e) {</span>
-<span class="nc" id="L60">			LoggingHelper.LOGGER.log(Level.SEVERE, e.getMessage());</span>
-<span class="fc" id="L61">		}</span>
-<span class="fc" id="L62">	}</span>
+<span class="nc" id="L58">		} catch (Exception e) {</span>
+<span class="nc" id="L59">			LoggingHelper.LOGGER.log(Level.SEVERE, e.getMessage());</span>
+<span class="fc" id="L60">		}</span>
+<span class="fc" id="L61">	}</span>
 
 	public void update() {
 		// check keys
-<span class="nc" id="L66">		handleInput();</span>
-<span class="nc" id="L67">	}</span>
+<span class="nc" id="L65">		handleInput();</span>
+<span class="nc" id="L66">	}</span>
 
 	public void draw(Graphics2D g) {
 		// draw bg
-<span class="nc" id="L71">		g.drawImage(bg, 0, 0, null);</span>
+<span class="nc" id="L70">		g.drawImage(bg, 0, 0, null);</span>
 		// draw menu options
-<span class="nc" id="L73">		g.setFont(font);</span>
-<span class="nc" id="L74">		g.setColor(Color.YELLOW);</span>
-<span class="nc" id="L75">		g.drawRoundRect(220, 170, 245, 140, 50, 50);</span>
-<span class="nc" id="L76">		g.fillRect(230, 180, 225, 120); // Fills a square</span>
-<span class="nc" id="L77">		g.setColor(Color.WHITE);</span>
+<span class="nc" id="L72">		g.setFont(font);</span>
+<span class="nc" id="L73">		g.setColor(Color.YELLOW);</span>
+<span class="nc" id="L74">		g.drawRoundRect(220, 170, 245, 140, 50, 50);</span>
+<span class="nc" id="L75">		g.fillRect(230, 180, 225, 120); // Fills a square</span>
+<span class="nc" id="L76">		g.setColor(Color.WHITE);</span>
 		// draw floating head
-<span class="nc bnc" id="L79" title="All 2 branches missed.">		if (currentChoice == 0)</span>
-<span class="nc" id="L80">			g.drawImage(head, 270, 213, null); // 25</span>
-<span class="nc bnc" id="L81" title="All 2 branches missed.">		else if (currentChoice == 1)</span>
-<span class="nc" id="L82">			g.drawImage(head, 270, 238, null);</span>
-<span class="nc bnc" id="L83" title="All 2 branches missed.">		else if (currentChoice == 2)</span>
-<span class="nc" id="L84">			g.drawImage(head, 270, 263, null);</span>
-<span class="nc bnc" id="L85" title="All 2 branches missed.">		else if (currentChoice == 3)</span>
-<span class="nc" id="L86">			g.drawImage(head, 270, 281, null);</span>
-<span class="nc bnc" id="L87" title="All 2 branches missed.">		else if (currentChoice == 4)</span>
-<span class="nc" id="L88">			g.drawImage(head, 270, 299, null);</span>
-<span class="nc bnc" id="L89" title="All 2 branches missed.">		else if (currentChoice == 5)</span>
-<span class="nc" id="L90">			g.drawImage(head, 270, 317, null);</span>
+<span class="nc bnc" id="L78" title="All 2 branches missed.">		if (currentChoice == 0)</span>
+<span class="nc" id="L79">			g.drawImage(head, 270, 213, null); // 25</span>
+<span class="nc bnc" id="L80" title="All 2 branches missed.">		else if (currentChoice == 1)</span>
+<span class="nc" id="L81">			g.drawImage(head, 270, 238, null);</span>
+<span class="nc bnc" id="L82" title="All 2 branches missed.">		else if (currentChoice == 2)</span>
+<span class="nc" id="L83">			g.drawImage(head, 270, 263, null);</span>
+<span class="nc bnc" id="L84" title="All 2 branches missed.">		else if (currentChoice == 3)</span>
+<span class="nc" id="L85">			g.drawImage(head, 270, 281, null);</span>
+<span class="nc bnc" id="L86" title="All 2 branches missed.">		else if (currentChoice == 4)</span>
+<span class="nc" id="L87">			g.drawImage(head, 270, 299, null);</span>
+<span class="nc bnc" id="L88" title="All 2 branches missed.">		else if (currentChoice == 5)</span>
+<span class="nc" id="L89">			g.drawImage(head, 270, 317, null);</span>
 		// other
-<span class="nc" id="L92">		g.setFont(font2);</span>
-<span class="nc" id="L93">		g.drawString(&quot;tonikolaba \u00A9 \u00AE&quot;, 20, 468);</span>
-<span class="nc" id="L94">	}</span>
+<span class="nc" id="L91">		g.setFont(font2);</span>
+<span class="nc" id="L92">		g.drawString(&quot;tonikolaba \u00A9 \u00AE&quot;, 20, 468);</span>
+<span class="nc" id="L93">	}</span>
 
 	protected void select() {
-<span class="nc" id="L97">		throw new IllegalStateException(&quot;Needs to be overwritten&quot;);</span>
+<span class="nc" id="L96">		throw new IllegalStateException(&quot;Needs to be overwritten&quot;);</span>
 	}
 
 	public void handleInput() {
-<span class="nc bnc" id="L101" title="All 2 branches missed.">		if (Keys.isPressed(Keys.ENTER))</span>
-<span class="nc" id="L102">			select();</span>
-<span class="nc bnc" id="L103" title="All 4 branches missed.">		if (Keys.isPressed(Keys.UP) &amp;&amp; currentChoice &gt; 0) {</span>
-<span class="nc" id="L104">			JukeBox.play(MENU_OPTION, 0);</span>
-<span class="nc" id="L105">			currentChoice--;</span>
+<span class="nc bnc" id="L100" title="All 2 branches missed.">		if (Keys.isPressed(Keys.ENTER))</span>
+<span class="nc" id="L101">			select();</span>
+<span class="nc bnc" id="L102" title="All 4 branches missed.">		if (Keys.isPressed(Keys.UP) &amp;&amp; currentChoice &gt; 0) {</span>
+<span class="nc" id="L103">			JukeBox.play(MENU_OPTION, 0);</span>
+<span class="nc" id="L104">			currentChoice--;</span>
 		}
-<span class="nc bnc" id="L107" title="All 4 branches missed.">		if (Keys.isPressed(Keys.DOWN) &amp;&amp; currentChoice &lt; options.length - 1) {</span>
-<span class="nc" id="L108">			JukeBox.play(MENU_OPTION, 0);</span>
-<span class="nc" id="L109">			currentChoice++;</span>
+<span class="nc bnc" id="L106" title="All 4 branches missed.">		if (Keys.isPressed(Keys.DOWN) &amp;&amp; currentChoice &lt; options.length - 1) {</span>
+<span class="nc" id="L107">			JukeBox.play(MENU_OPTION, 0);</span>
+<span class="nc" id="L108">			currentChoice++;</span>
 		}
-<span class="nc" id="L111">	}</span>
+<span class="nc" id="L110">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
